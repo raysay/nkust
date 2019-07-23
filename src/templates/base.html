@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>NKUST-BIM</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'Semantic-UI-CSS-master/semantic.min.css' %}">
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'Semantic-UI-CSS-master/semantic.min.js' %}"></script>
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <div class="ui inverted menu">
+      <a class="active item">
+        Home
+      </a>
+      <a class="item">
+        About
+      </a>
+      <a class="item">
+        Login
+      </a>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+
+
+
+    {% block javascript %}{% endblock %}
+  </body>
+</html>

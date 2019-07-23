@@ -1,0 +1,134 @@
+{% extends "socialaccount/base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% load bootstrap3 %}
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron">
+
+
+    <div class="container" id="mybody">
+
+      <div class="row" id="pwd-container">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+          <section class="login-form">
+            <form class="signup" id="signup_form" method="post" action="{% url 'socialaccount_signup' %}" role="login">
+                <h2>{% trans "註冊新帳號" %}</h2>
+
+            <p>{% trans "請完成以下資料填寫" %}</p>
+
+
+
+              {% csrf_token %}
+              {% bootstrap_form form %}
+              {% if redirect_field_value %}
+              <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              {% endif %}
+              <button type="submit" class="btn btn-lg btn-block" style="background:rgb(221,75,57);color:white;"><i class="fa fa-google-plus" aria-hidden="true"></i> {% trans "註冊" %}</button>
+              <hr>
+              <p>{% trans "若如要綁定已註冊之帳號，請先登入後從「偏好設定」進行帳號綁定" %}</p>
+            </form>
+</section>
+</div>
+
+<div class="col-md-2"></div>
+
+
+</div>
+
+
+</div>
+
+</div>
+</div>
+{% endblock %}
+{% block head %}
+<script type="text/javascript">
+jQuery(document).ready(function() {
+
+$('#mybody').parents().addClass('mybody');
+
+});
+
+
+
+</script>
+<style media="screen">
+.progress-bar {
+  color: #333;
+}
+
+/*
+Reference:
+http://www.bootstrapzen.com/item/135/simple-login-form-logo/
+*/
+
+* {
+  -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+outline: none;
+}
+
+  .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  @include box-sizing(border-box);
+
+  &:focus {
+    z-index: 2;
+  }
+}
+
+.mybody {
+	background: url({% static 'loginbackground.jpg' %}) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login-form {
+margin-top: 60px;
+}
+
+form[role=login] {
+color: #5d5d5d;
+background: #f2f2f2;
+padding: 26px;
+border-radius: 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+}
+form[role=login] img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 35px;
+}
+form[role=login] input,
+form[role=login] button {
+  font-size: 18px;
+  margin: 16px 0;
+}
+form[role=login] > div {
+  text-align: center;
+}
+
+.form-links {
+text-align: center;
+margin-top: 1em;
+margin-bottom: 50px;
+}
+.form-links a {
+  color: #fff;
+}
+</style>
+
+{% endblock %}
