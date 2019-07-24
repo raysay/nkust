@@ -39,10 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'blog',
-    # 'allauth',
-    # 'allauth.account',
-    # 'allauth.socialaccount',
-    # 'allauth.socialaccount.providers.google',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -145,5 +145,5 @@ MEDIA_URL = '/media/'
 
 SOCIALACCOUNT_QUERY_EMAIL = True
 SOCIALACCOUNT_AUTO_SIGNUP = False
-SOCIALACCOUNT_FORMS = {'signup': 'UserProfile.forms.MyCustomSocialSignupForm'}
+SOCIALACCOUNT_FORMS = {'signup': 'blog.forms.MyCustomSocialSignupForm'}
 ACCOUNT_EMAIL_REQUIRED = True
