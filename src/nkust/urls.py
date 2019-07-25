@@ -20,10 +20,17 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home,name='home'),
+<<<<<<< HEAD
 
     path('yen/', views.yen,name='yen'),
 
+=======
+<<<<<<< HEAD
+    path('test/', views.use,name='test'),
+=======
+>>>>>>> 11f3334c3e76dcc9beeeef42521533b47ff6841e
     path('info/', views.info, name='info'),
+>>>>>>> 064fc8da5de22254ae5816893dd1ec609023be01
 
 
     path('rex/', views.rex,name='rex'),
