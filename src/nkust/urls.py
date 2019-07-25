@@ -20,8 +20,13 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home,name='home'),
+<<<<<<< HEAD
     path('test/', views.use,name='test'),
+=======
+    path('info/', views.info, name='info'),
+>>>>>>> 064fc8da5de22254ae5816893dd1ec609023be01
 
+    path('rex/', views.rex,name='rex'),
     # path('accounts/', include('django.contrib.auth.urls')),
     re_path(r'^accounts/', include('allauth.urls')),
 ]
