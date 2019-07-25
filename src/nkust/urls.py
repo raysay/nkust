@@ -25,7 +25,7 @@ urlpatterns = [
 
     path('info/', views.info, name='info'),
 
-
+    path('blog/', include('blog.urls')),
 
     path('rex/', views.rex,name='rex'),
     # path('accounts/', include('django.contrib.auth.urls')),
