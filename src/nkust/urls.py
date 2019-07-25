@@ -20,11 +20,15 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home,name='home'),
-<<<<<<< HEAD
+
     path('123/', views.zxc,name='123'),
-=======
+
+    path('test/', views.use,name='test'),
+
+    path('info/', views.info, name='info'),
+
     path('rex/', views.rex,name='rex'),
->>>>>>> 7fcd1f6c3b4ba2b068242f7c1d5091945be56886
+
     # path('accounts/', include('django.contrib.auth.urls')),
     re_path(r'^accounts/', include('allauth.urls')),
 ]
