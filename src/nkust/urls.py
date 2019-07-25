@@ -20,7 +20,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home,name='home'),
-
+    path('123/', views.zxc,name='123'),
     # path('accounts/', include('django.contrib.auth.urls')),
     re_path(r'^accounts/', include('allauth.urls')),
 ]
