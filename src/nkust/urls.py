@@ -22,6 +22,7 @@ urlpatterns = [
     path('home/', views.home,name='home'),
     path('info/', views.info, name='info'),
 
+    path('rex/', views.rex,name='rex'),
     # path('accounts/', include('django.contrib.auth.urls')),
     re_path(r'^accounts/', include('allauth.urls')),
 ]
