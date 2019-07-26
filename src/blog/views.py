@@ -9,5 +9,11 @@ def post_detail(request,pk):
     return render(request,'blog/post_detail.html',{'post':post})
 
 def post_new(request):
-    form =form.PostForm()
+    if request.method == "POST":
+        form = forms.PostForm(request.POST)
+        if forms.is_valid():
+            post = form.save(commit=True)
+            post.save()
+    else:
+        form = forms.PostForm()
     return render(request,'blog/post.html',{'form':form})
