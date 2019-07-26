@@ -9,6 +9,14 @@ from allauth.socialaccount.models import SocialAccount
 from urllib.request import urlopen
 from django.conf import settings
 
+from .import models
+
+class PostForm(forms.ModelForm):
+
+    class Meta:
+        model = models.Post
+        fields = ('title', 'content','poster',)
+
 User = get_user_model()
 
 
