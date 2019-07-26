@@ -1,13 +1,18 @@
 {% extends "base.html" %}
-
-
-
+{% load staticfiles %}
 
 {% block content %}
 
 <div class="ui cards">
   {% for post in posts %}
   <div class="card">
+    <div class="image">
+      {% if post.poster.img %}
+      <img src="{{ post.poster.img.url }}">
+      {% else %}
+      <img src="{% static 'nopic.png' %}">
+      {% endif %}
+    </div>
     <div class="content">
       <div class="header">{{ post.title }}</div>
       <div class="meta">{{ post.rec_time }}</div>
