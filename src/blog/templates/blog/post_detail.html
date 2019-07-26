@@ -4,33 +4,24 @@
 {% block content %}
 
 <div class="ui cards">
-  {% for post in posts %}
 
   <div class="card">
-
     <div class="image">
-
-        {% if post.poster.img %}
-        <img src="{{ post.poster.img.url }}">
-        {% else %}
-        <img src="{% static 'nopic.png' %}">
-        {% endif %}
-
+      {% if post.poster.img %}
+      <img src="{{ post.poster.img.url }}">
+      {% else %}
+      <img src="{% static 'nopic.png' %}">
+      {% endif %}
     </div>
     <div class="content">
-      <div class="header">
-        <a href="{% url 'blog:post_detail' pk=post.pk %}">
-          {{ post.title }}
-        </a></div>
+      <div class="header">{{ post.title }}</div>
       <div class="meta">{{ post.rec_time }}</div>
       <div class="description">
         {{ post.content }}
       </div>
     </div>
-
   </div>
 
-  {% endfor %}
 </div>
 
 
